@@ -18,7 +18,15 @@
     <title>Document</title>
 </head>
 <body>
+<!--    laden van de code uit header.php-->
     <?php
+        include "includes/header.php";
+        include "includes/functions.php";
+        ShowName("anthony");
+        echo CalculateMonths(20, 100);
+    ?>
+    <main>
+        <?php
         echo "<h1>hello world</h1>";
 
         echo "<p>test</p>";
@@ -29,7 +37,8 @@
         echo "mijn school is $schoolName";
 
         echo 6*6;
-    ?>
+        ?>
+    </main>
 </body>
 </html>
 
