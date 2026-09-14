@@ -1,4 +1,7 @@
 <?php
+session_start();
+$_SESSION["nutsstatus"] = $_POST["status"];
+echo $_SESSION["nutsstatus"];
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,6 +15,7 @@
 <body>
 <?php
 echo $_POST["status"];
+
 ?>
 
 </body>

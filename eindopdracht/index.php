@@ -6,6 +6,7 @@ session_start();
 $_SESSION["voornaam"] = "Jan";
 $_SESSION["achternaam"] = "Jansen";
 echo "Welkom " . $_SESSION["voornaam"];
+
 ?>
 <!doctype html>
 <html lang="en">

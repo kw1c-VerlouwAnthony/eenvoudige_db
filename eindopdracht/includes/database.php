@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "jouw_database_naam";
+$dbname = "studenten_informatie_db";
 $username = "root";
 $password = "";
 
@@ -16,3 +16,4 @@ try {
 } catch (PDOException $e) {
     die("Databaseverbinding mislukt: " . $e->getMessage());
 }
+?>

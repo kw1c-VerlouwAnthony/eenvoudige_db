@@ -17,6 +17,6 @@ include "../includes/header.php";
 </form>
 </body>
 <?php
-include "../includes/footer.php";
+    include "../includes/footer.php";
 ?>
 </html>
