@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "studenten_informatie_db";
+$dbname = "pokemondb";
 $username = "root";
 $password = "";
 

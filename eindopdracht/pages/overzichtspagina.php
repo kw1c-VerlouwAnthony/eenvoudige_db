@@ -10,15 +10,33 @@ session_start();
     include "../includes/header.php";
 ?>
 <body>
+<table border="1">
 <?php
-    require "../includes/database.php";
-    $sql = "SELECT * FROM studenten_dataset_kw1c";
-    $result = $connection->query($sql);
+    require "../includes/db_functions.php";
+    StartConnection("studenten_informatie_db");
 
-    foreach ($result as $student) {
-        echo $student["COL 2"] . " " . $student["COL 3"] . "<br>";
-    }
+    $query = "SELECT * FROM studenten_dataset_kw1c";
+    $resultQuery = ExecuteSelectQuery($query);
+
+
+foreach ($resultQuery as $row) {
+    echo "<tr>";
+
+    echo "<td>" . $row["COL 1"] . "</td>";
+    echo "<td>" . $row["COL 2"] . "</td>";
+    echo "<td>" . $row["COL 3"] . "</td>";
+    echo "<td>" . $row["COL 4"] . "</td>";
+    echo "<td>" . $row["COL 5"] . "</td>";
+    echo "<td>" . $row["COL 6"] . "</td>";
+    echo "<td>" . $row["COL 7"] . "</td>";
+    echo "<td>" . $row["COL 8"] . "</td>";
+    echo "<td>" . $row["COL 9"] . "</td>";
+    echo "<td>" . $row["COL 10"] . "</td>";
+
+    echo "</tr>";
+}
 ?>
+</table>
 </body>
 <?php
     include "../includes/footer.php";
