@@ -10,10 +10,17 @@ session_start();
     include "../includes/header.php";
 ?>
 <body>
-<table border="1">
 <?php
     require "../includes/db_functions.php";
     StartConnection("studenten_informatie_db");
+?>
+<form action="" method="get">
+    <?php
+        $search = S
+    ?>
+</form>
+<table border="1">
+<?php
 
     $query = "SELECT * FROM studenten_dataset_kw1c";
     $resultQuery = ExecuteSelectQuery($query);
@@ -32,6 +39,7 @@ foreach ($resultQuery as $row) {
     echo "<td>" . $row["COL 8"] . "</td>";
     echo "<td>" . $row["COL 9"] . "</td>";
     echo "<td>" . $row["COL 10"] . "</td>";
+    echo "<td>" ."<a href='inlogpagina.php'>Verwijderen</a>" . "</td>";
 
     echo "</tr>";
 }

@@ -1,6 +1,6 @@
 <?php
 //include datanase in de file
-include "includes/database.php";
+include "includes/db_functions.php";
 ?>
 
 <!doctype html>
@@ -14,8 +14,19 @@ include "includes/database.php";
 </head>
 <body>
 <?php
-//hoort connectie te starten met database
-//    StartConnection("pokemondb");
+StartConnection("pokemondb");
+$query = "SELECT * FROM pokemon;";
+
+$results = ExecuteSelectQuery($query);
+
+//var_dump($results);
+
+foreach($results as $pokemon)
+{
+    echo $pokemon["name"];
+    echo $pokemon["picture"];
+    echo "<br><br>";
+}
 ?>
     <form method="get">
         <p>
