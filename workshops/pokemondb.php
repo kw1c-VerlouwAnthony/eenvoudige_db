@@ -11,22 +11,18 @@ include "includes/db_functions.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/stylesheet.css">
 </head>
 <body>
+<main>
+    <a href="toevoegen_pokemon.php">pokemon toevoegen</a>
 <?php
 StartConnection("pokemondb");
-$query = "SELECT * FROM pokemon;";
 
-$results = ExecuteSelectQuery($query);
 
 //var_dump($results);
 
-foreach($results as $pokemon)
-{
-    echo $pokemon["name"];
-    echo $pokemon["picture"];
-    echo "<br><br>";
-}
+
 ?>
     <form method="get">
         <p>
@@ -40,7 +36,7 @@ foreach($results as $pokemon)
 //                query voor unieke type1 the vinden uit de pokemon tabel
                     $queryType1 = "SELECT * DISTINCT type1 FROM pokemon";
 //                    stuurt de query naar de database hoort ook een functie die ik niet heb
-                    $resultType1 = $connection->query($queryType1);
+                    $resultType1 = ExecuteSelectQuery($queryType1);
 
 //                    voor elke resultaat maakt hij een optie type 1
                     foreach ($resultType1 as $type1) {
@@ -75,6 +71,26 @@ foreach($results as $pokemon)
 //        als het wel gelijk is aan all vindt hij de pokemon het meest dichtbij de search
         $query = "SELECT * FROM pokemon WHERE name LIKE = '%$search%'";
     }
+
+
+    $query = "SELECT * FROM pokemon";
+
+    $results = ExecuteSelectQuery($query);
+
+    foreach ($results as $pokemon) {
+
+        $pokemonName = $pokemon["name"];
+        $pokemonImage = $pokemon["picture"];
+        $pokemonID = $pokemon["number"];
+        echo "<article>";
+            echo "<h2>$pokemonName</h2>";
+            echo "<img src='$pokemonImage'>";
+            echo "<br><br>";
+
+        echo "<a href='updaten_pokemon.php?pokemonID=$pokemonID'>bewerken</a>";
+        echo "</article>";
+    }
 ?>
+</main>
 </body>
 </html>

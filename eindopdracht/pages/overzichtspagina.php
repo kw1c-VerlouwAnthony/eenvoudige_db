@@ -16,7 +16,7 @@ session_start();
 ?>
 <form action="" method="get">
     <?php
-        $search = S
+        $search = "DELETE FROM `studenten_dataset_kw1c` WHERE 0"
     ?>
 </form>
 <table border="1">
