@@ -10,3 +10,10 @@ function LoginCheck()
         exit();
     }
 }
+
+
+function verwijderStudent()
+{
+    $ID = $_GET["studentID"];
+    $query = "DELETE FROM studenten_dataset_kw1c WHERE studentID = '$ID'";
+}
