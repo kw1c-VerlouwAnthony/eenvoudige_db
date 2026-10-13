@@ -7,16 +7,17 @@ session_start();
 require "../includes/db_functions.php";
 StartConnection("users");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     $email = $_POST['email'];
     $password = $_POST['wachtwoord'];
 
-    $query = "SELECT * FROM userdata WHERE email = '$email' AND PASSWORD = '$password'";
-    $result = ExecuteSelectQuery($query);
+    $queryLogin = "SELECT * FROM userdata WHERE email = '$email' AND PASSWORD = '$password'";
+    $resultLogin = ExecuteSelectQuery($queryLogin);
 
 
-    foreach ($result as $user) {
-        if ($email == $user['email'] && $password == $user['PASSWORD']) {
+        if ($resultLogin > 0)
+        {
             $_SESSION['ingelogd'] = true;
             echo "je bent ingelogd";
         }
@@ -25,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "deze gebruiker bestaat niet";
         }
 
-    }
 }
 ?>
 <!doctype html>

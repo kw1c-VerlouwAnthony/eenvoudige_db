@@ -41,6 +41,12 @@ foreach ($result as $col) {
     $huidigjaar = $col['HuidigJaar'];
     $studieStatus = $col['StudieStatus'];
 }
+
+if (!isset($ID))
+{
+    header("Location: ../index.php");
+    die();
+}
 ?>
 
 <form method="POST" action="bewerk_student.php">
