@@ -5,3 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<ul>
+    <li><a href="/eenvoudige_db/eindopdracht/index.php">Home</a> </li>
+    <li><a href="/eenvoudige_db/eindopdracht/pages/overzichtspagina.php">Overzicht</a></li>
+    <?php
+
+    if (!isset($_SESSION['ingelogd']))
+    {
+        echo "<li>" . "<a href='/eenvoudige_db/eindopdracht/pages/inlogpagina.php'>" . "login" . "</a>" . "</li>";
+    }
+    else
+    {
+        echo "<li>" . "<a href='/eenvoudige_db/eindopdracht/pages/inlogpagina.php'>" . "Logout" . "</a>" . "</li>";
+    }
+    ?>
+</ul>
