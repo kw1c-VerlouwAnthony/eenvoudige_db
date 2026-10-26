@@ -6,18 +6,14 @@
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<?php
+    include "../includes/header.php";
+?>
 <body>
 <h1>
     Student Toevoegen
 </h1>
-<form method="POST" action="toevoegen_student.php">
+<form method="POST" action="toevoegenStudent.php">
     <p>
         <label for="studentId">Student ID</label>
         <input id="studentId" name="studentid" type="text">
@@ -93,5 +89,8 @@ if (isset($_POST["Submit"])) {
 }
 ?>
 </body>
+<?php
+include "../includes/footer.php";
+?>
 </html>
 

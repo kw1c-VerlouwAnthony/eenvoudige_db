@@ -1,6 +1,5 @@
-<?php
-?>
-
 <footer>
-    <p>Footer Content</p>
+    <p><?php echo date("Y"); ?>
+        Studenten Database. Alle rechten voorbehouden.
+    </p> <p>Studenten Informatie Systeem</p>
 </footer>

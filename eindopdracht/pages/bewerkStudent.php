@@ -7,13 +7,11 @@ session_start();
 ?>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<?php
+
+    include "../includes/header.php";
+
+?>
 <body>
 <h1>
     Studenten update
@@ -94,7 +92,8 @@ if (!isset($ID))
 </form>
 
 <?php
-    if (isset($_POST['Submit'])) {
+    if (isset($_POST['Submit']))
+    {
         $newStudentID = $_POST['studentID'];
         $newVoornaam = $_POST['voornaam'];
         $newAchternaam = $_POST['achternaam'];

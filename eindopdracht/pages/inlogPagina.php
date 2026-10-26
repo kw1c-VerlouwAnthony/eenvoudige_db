@@ -1,7 +1,7 @@
 <?php
 //anthony verlouw
 //13/09/2025
-//inlogpagina.php
+//inlogPagina.php
 session_start();
 
 require "../includes/db_functions.php";
@@ -34,11 +34,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 include "../includes/header.php";
 ?>
 <body>
-<form action="inlogpagina.php" method="post">
-    Email <input type="text" id="email" name="email"><br>
-    Wachtwoord <input type="text" id="wachtwoord" name="wachtwoord"><br>
-    <input type="submit">
-</form>
+    <main class="login-container">
+        <h1>Inloggen</h1>
+
+        <form action="inlogPagina.php" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="wachtwoord">Wachtwoord</label>
+            <input type="password" id="wachtwoord" name="wachtwoord" required>
+
+            <input type="submit" value="Inloggen">
+        </form>
+    </main>
 </body>
 <?php
     include "../includes/footer.php";
