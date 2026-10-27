@@ -8,7 +8,7 @@
 </head>
 <ul>
     <li><a href="/eenvoudige_db/eindopdracht/index.php">Home</a> </li>
-    <li><a href="/eenvoudige_db/eindopdracht/pages/overzichtspagina.php">Overzicht</a></li>
+    <li><a href="/eenvoudige_db/eindopdracht/pages/overzichtsPagina.php">Overzicht</a></li>
     <?php
 
     if (!isset($_SESSION['ingelogd']))

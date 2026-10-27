@@ -16,15 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $resultLogin = ExecuteSelectQuery($queryLogin);
 
 
-        if ($resultLogin > 0)
-        {
-            $_SESSION['ingelogd'] = true;
-            echo "je bent ingelogd";
-        }
-        else
-        {
-            echo "deze gebruiker bestaat niet";
-        }
+    if (isset($resultLogin[0]))
+    {
+        $_SESSION['ingelogd'] = true;
+        echo "Je bent ingelogd";
+    }
+    else
+    {
+        echo "Onjuist e-mailadres of wachtwoord";
+    }
 
 }
 ?>

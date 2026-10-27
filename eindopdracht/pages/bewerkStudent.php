@@ -40,14 +40,14 @@ foreach ($result as $col) {
     $studieStatus = $col['StudieStatus'];
 }
 
-if (!isset($ID))
-{
-    header("Location: ../index.php");
-    die();
-}
+//if (!isset($ID))
+//{
+//    header("Location: ../index.php");
+//    die();
+//}
 ?>
 
-<form method="POST" action="bewerk_student.php">
+<form method="POST" action="bewerkStudent.php?studentID=<?php echo $ID;?>">
     <p>
         <label for="studentId">Student ID</label>
         <input id="studentId" name="studentid" type="text" value="<?php echo $studentID; ?>">
@@ -94,7 +94,6 @@ if (!isset($ID))
 <?php
     if (isset($_POST['Submit']))
     {
-        $newStudentID = $_POST['studentID'];
         $newVoornaam = $_POST['voornaam'];
         $newAchternaam = $_POST['achternaam'];
         $newGeboortedatum = $_POST['geboortedatum'];
@@ -105,7 +104,7 @@ if (!isset($ID))
         $newHuidigjaar = $_POST['huidigjaar'];
         $newStudieStatus = $_POST['studiestatus'];
 
-        $queryUpdate = "UPDATE studenten_dataset_kw1c SET `StudentID` = '$newStudentID', `Voornaam` = '$newVoornaam', `Achternaam` = '$newAchternaam', `Geboortedatum` = '$newGeboortedatum', `Geslacht` = '$newGeslacht', `Email` = '$newEmail',`Startjaar` = '$newStartjaar' ,`HuidigJaar` = '$newHuidigjaar', `StudieStatus` = '$newStudieStatus' WHERE `studentID` = '$ID' ";
+        $queryUpdate = "UPDATE studenten_dataset_kw1c SET `Voornaam` = '$newVoornaam', `Achternaam` = '$newAchternaam', `Geboortedatum` = '$newGeboortedatum', `Geslacht` = '$newGeslacht', `Email` = '$newEmail',`Studierichting` = '$newStudieRichting', `Startjaar` = '$newStartjaar' ,`HuidigJaar` = '$newHuidigjaar', `StudieStatus` = '$newStudieStatus' WHERE `studentID` = '$ID' ";
 
         echo ExecuteQuery($queryUpdate);
 

@@ -107,8 +107,8 @@ session_start();
                     echo "<td>" . $col["Startjaar"] . "</td>";
                     echo "<td>" . $col["HuidigJaar"] . "</td>";
                     echo "<td>" . $col["StudieStatus"] . "</td>";
-                    echo "<td>" . "<a href='bewerk_student.php?studentID=$studentID'>Bewerken</a>" . "</td>";
-                    echo "<td>" . "<a href='verwijder_student.php?studentID=$studentID'>Verwijderen</a>" . "</td>";
+                    echo "<td>" . "<a href='bewerkStudent.php?studentID=$studentID'>Bewerken</a>" . "</td>";
+                    echo "<td>" . "<a href='verwijderStudent.php?studentID=$studentID'>Verwijderen</a>" . "</td>";
 
                     echo "</tr>";
                 }
