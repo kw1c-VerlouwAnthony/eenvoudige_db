@@ -23,6 +23,25 @@ require "../includes/db_functions.php";
 
 StartConnection("studenten_informatie_db");
 
+//deze if statement checkt of iemand de submit button klikt op de forum and
+if (isset($_POST['Submit']))
+{
+    $newVoornaam = $_POST['voornaam'];
+    $newAchternaam = $_POST['achternaam'];
+    $newGeboortedatum = $_POST['geboortedatum'];
+    $newGeslacht = $_POST['geslacht'];
+    $newEmail = $_POST['email'];
+    $newStudieRichting = $_POST['studierichting'];
+    $newStartjaar = $_POST['startjaar'];
+    $newHuidigjaar = $_POST['huidigjaar'];
+    $newStudieStatus = $_POST['studiestatus'];
+
+    $queryUpdate = "UPDATE studenten_dataset_kw1c SET `Voornaam` = '$newVoornaam', `Achternaam` = '$newAchternaam', `Geboortedatum` = '$newGeboortedatum', `Geslacht` = '$newGeslacht', `Email` = '$newEmail',`Studierichting` = '$newStudieRichting', `Startjaar` = '$newStartjaar' ,`HuidigJaar` = '$newHuidigjaar', `StudieStatus` = '$newStudieStatus' WHERE `studentID` = '$ID' ";
+
+    ExecuteQuery($queryUpdate);
+
+}
+
 $query = "SELECT * FROM studenten_dataset_kw1c WHERE studentID = '$ID'";
 $result = ExecuteSelectQuery($query);
 
@@ -40,17 +59,17 @@ foreach ($result as $col) {
     $studieStatus = $col['StudieStatus'];
 }
 
-//if (!isset($ID))
-//{
-//    header("Location: ../index.php");
-//    die();
-//}
+if (!isset($ID))
+{
+    header("Location: ../index.php");
+    die();
+}
 ?>
 
 <form method="POST" action="bewerkStudent.php?studentID=<?php echo $ID;?>">
     <p>
         <label for="studentId">Student ID</label>
-        <input id="studentId" name="studentid" type="text" value="<?php echo $studentID; ?>">
+        <input id="studentId" name="studentid" type="text" value="<?php echo $studentID; ?>" readonly>
     </p>
     <p>
         <label for="Voornaam">Voornaam</label>
@@ -74,7 +93,28 @@ foreach ($result as $col) {
     </p>
     <p>
         <label for="Studierichting">Studie richting</label>
-        <input id="Studierichting" name="studierichting" type="text" value="<?php echo $studieRichting; ?>">
+        <select id="Studierichting" name="studierichting">
+            <?php
+            $queryStudie = "SELECT DISTINCT `Studierichting` FROM studenten_dataset_kw1c;";
+            $resultStudie = ExecuteSelectQuery($queryStudie);
+
+            foreach ($resultStudie as $option)
+            {
+                $richting = $option['Studierichting'];
+
+                if ($richting == $studieRichting)
+                {
+                    $selected = "selected";
+                }
+                else
+                {
+                    $selected = "";
+                }
+
+                echo "<option value=\"$richting\" $selected>$richting</option>";
+            }
+            ?>
+        </select>
     </p>
     <p>
         <label for="Startjaar">Start jaar</label>
@@ -86,30 +126,31 @@ foreach ($result as $col) {
     </p>
     <p>
         <label for="Studiestatus">Studie status</label>
-        <input id="Studiestatus" name="studiestatus" type="text" value="<?php echo $studieStatus; ?>">
+        <select id="Studiestatus" name="studiestatus">
+            <?php
+            $queryStudie = "SELECT DISTINCT `StudieStatus`FROM studenten_dataset_kw1c";
+            $resultStudie = ExecuteSelectQuery($queryStudie);
+
+            foreach ($resultStudie as $option)
+            {
+                $status = $option['StudieStatus'];
+
+                if ($status == $studieStatus)
+                {
+                    $selected = "selected";
+                }
+                else
+                {
+                    $selected = "";
+                }
+
+                echo "<option value=\"$status\" $selected>$status</option>";
+            }
+            ?>
+        </select>
     </p>
     <input type="submit" name="Submit">
 </form>
-
-<?php
-    if (isset($_POST['Submit']))
-    {
-        $newVoornaam = $_POST['voornaam'];
-        $newAchternaam = $_POST['achternaam'];
-        $newGeboortedatum = $_POST['geboortedatum'];
-        $newGeslacht = $_POST['geslacht'];
-        $newEmail = $_POST['email'];
-        $newStudieRichting = $_POST['studierichting'];
-        $newStartjaar = $_POST['startjaar'];
-        $newHuidigjaar = $_POST['huidigjaar'];
-        $newStudieStatus = $_POST['studiestatus'];
-
-        $queryUpdate = "UPDATE studenten_dataset_kw1c SET `Voornaam` = '$newVoornaam', `Achternaam` = '$newAchternaam', `Geboortedatum` = '$newGeboortedatum', `Geslacht` = '$newGeslacht', `Email` = '$newEmail',`Studierichting` = '$newStudieRichting', `Startjaar` = '$newStartjaar' ,`HuidigJaar` = '$newHuidigjaar', `StudieStatus` = '$newStudieStatus' WHERE `studentID` = '$ID' ";
-
-        echo ExecuteQuery($queryUpdate);
-
-    }
-?>
 </body>
 </html>
 

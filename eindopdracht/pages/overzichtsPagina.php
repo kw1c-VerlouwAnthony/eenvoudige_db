@@ -25,7 +25,7 @@ session_start();
                 <input type="text" name="search">
             </p>
             <p>
-                <label>Type 1</label>
+                <label>Studierichting</label>
                 <select name="searchStudie">
                     <option>All</option>
                     <?php
