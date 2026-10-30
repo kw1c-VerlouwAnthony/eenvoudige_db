@@ -177,15 +177,6 @@ a:hover {
     background-color: #217dbb;
 }
 
-/* Geeft de link naar het toevoegen van een student een groene achtergrond */
-a[href*="toevoegen_student.php"] {
-    background-color: #27ae60;
-}
-
-/* Geeft de link naar het verwijderen van een student een rode achtergrond */
-a[href*="verwijder_student.php"] {
-    background-color: #e74c3c;
-}
 
 /* Past de website aan voor schermen van maximaal 768 pixels breed */
 @media screen and (max-width: 768px) {
