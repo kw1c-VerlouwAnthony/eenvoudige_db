@@ -15,7 +15,7 @@ include "includes/header.php";
 <main class="homepage">
     <!-- Dit is de hoofdtitel van de homepagina -->
     <h1>
-        Welkom bij het Studenten Informatie Systeem
+        Welkom bij het Studenten Database Info
     </h1>
     <!-- Titel van het onderdeel over het studentenoverzicht -->
     <h2>
