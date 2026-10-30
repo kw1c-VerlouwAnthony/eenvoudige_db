@@ -4,40 +4,47 @@
 //IHOS25S3A
 session_start();
 ?>
-<!DOCTYPE html> <html lang="nl">
+
+<!doctype html>
+<html lang="en">
 <?php
+// Hier wordt de header toegevoegd aan de pagina
 include "includes/header.php";
 ?>
 <body>
-
 <main class="homepage">
-
-    <section class="welcome"> <h1>Welkom bij het Studenten Informatie Systeem</h1>
-
-        <p> Op deze website kun je studentgegevens bekijken en beheren. </p>
-
-        <a href="pages/overzichtsPagina.php" class="button"> Bekijk studenten </a> </section>
-
-    <section class="homepage-content">
-
-        <article class="home-card"> <h2>Studentenoverzicht</h2>
-
-            <p> Bekijk studentgegevens, waaronder namen, geboortedatums, studierichtingen en studiejaren. </p>
-
-            <a href="pages/overzichtsPagina.php" class="button"> Naar overzicht </a> </article>
-
-        <article class="home-card"> <h2>Studentgegevens beheren</h2>
-
-            <p> Log in om studentgegevens toe te voegen, te bewerken of te verwijderen. </p>
-
-            <a href="pages/inlogPagina.php" class="button"> Inloggen </a> </article>
-
-    </section>
-
+    <!-- Dit is de hoofdtitel van de homepagina -->
+    <h1>
+        Welkom bij het Studenten Informatie Systeem
+    </h1>
+    <!-- Titel van het onderdeel over het studentenoverzicht -->
+    <h2>
+        Studentenoverzicht
+    </h2>
+    <!-- Korte uitleg over welke studentgegevens bekeken kunnen worden -->
+    <p>
+        Bekijk studentgegevens, waaronder namen, geboortedatums, studierichtingen en studiejaren.
+    </p>
+    <!-- Met deze link kan de gebruiker naar de overzichtspagina gaan -->
+    <a href="pages/overzichtsPagina.php" class="button">
+        Naar overzicht
+    </a>
+    <!-- Titel van het onderdeel over het beheren van studentgegevens -->
+    <h2>
+        Studentgegevens beheren
+    </h2>
+    <!-- Hier wordt uitgelegd dat inloggen nodig is om studentgegevens te beheren -->
+    <p>
+        Log in om studentgegevens toe te voegen, te bewerken of te verwijderen.
+    </p>
+    <!-- Met deze link kan de gebruiker naar de inlogpagina gaan -->
+    <a href="pages/inlogPagina.php" class="button">
+        Inloggen
+    </a>
 </main>
-
 <?php
+// Hier wordt de footer onderaan de pagina toegevoegd
 include "includes/footer.php";
 ?>
-
-</body> </html>
+</body>
+</html>

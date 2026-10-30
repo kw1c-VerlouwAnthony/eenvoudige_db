@@ -1,186 +1,334 @@
+
+/* Opmaak van het navigatiemenu */
 ul {
+    /* Haalt de bolletjes voor de lijst weg */
     list-style-type: none;
+
+    /* Haalt de standaard buitenruimte weg */
     margin: 0;
+
+    /* Haalt de standaard binnenruimte weg */
     padding: 0;
+
+    /* Geeft het menu een donkerblauwe achtergrond */
     background-color: #2c3e50;
+
+    /* Zet de menu onderdelen naast elkaar */
     display: flex;
+
+    /* Lijnt de menu onderdelen netjes uit */
     align-items: center;
 }
 
+/* Opmaak van de onderdelen in het menu */
 li {
+    /* Zorgt ervoor dat er geen extra buitenruimte om de onderdelen zit */
     margin: 0;
 }
 
+/* Opmaak van de links in het navigatiemenu */
 li a {
+    /* Zorgt ervoor dat de hele ruimte van de link klikbaar is */
     display: block;
+
+    /* Maakt de tekst wit */
     color: white;
+
+    /* Zet de tekst in het midden */
     text-align: center;
+
+    /* Geeft ruimte rondom de tekst */
     padding: 16px 20px;
+
+    /* Haalt de onderstreping van de links weg */
     text-decoration: none;
+
+    /* Stelt het lettertype in */
     font-family: Arial, sans-serif;
+
+    /* Stelt de grootte van de tekst in */
     font-size: 16px;
 }
 
+/* Wat er gebeurt als je met de muis over een menu link gaat */
 li a:hover {
+    /* Verandert de achtergrond naar blauw */
     background-color: #3498db;
 }
 
+/* Past het menu aan als het scherm maximaal 600 pixels breed is */
 @media screen and (max-width: 600px) {
     ul {
+        /* Zet de menu onderdelen onder elkaar */
         flex-direction: column;
+
+        /* Zorgt dat de menu onderdelen de beschikbare breedte gebruiken */
         align-items: stretch;
     }
 
     li a {
+        /* Zet de tekst aan de linkerkant */
         text-align: left;
+
+        /* Past de ruimte rondom de tekst aan */
         padding: 14px 20px;
     }
 }
 
+/* Algemene opmaak van de hele website */
 body {
+    /* Gebruikt Arial als lettertype */
     font-family: Arial, sans-serif;
+
+    /* Geeft de pagina een lichtgrijze achtergrond */
     background-color: #f4f6f9;
+
+    /* Maakt de standaard tekst donkergrijs */
     color: #333;
+
+    /* Haalt de standaard buitenruimte weg */
     margin: 0;
+
+    /* Geeft ruimte rondom de inhoud van de pagina */
     padding: 20px;
 }
 
+/* Algemene opmaak van de tabellen */
 table {
+    /* Laat de tabel de volledige beschikbare breedte gebruiken */
     width: 100%;
+
+    /* Zorgt ervoor dat de tabel niet breder wordt dan 1200 pixels */
     max-width: 1200px;
+
+    /* Zet de tabel in het midden en geeft ruimte boven en onder */
     margin: 20px auto;
+
+    /* Zorgt ervoor dat de randen van cellen samenkomen */
     border-collapse: collapse;
+
+    /* Geeft de tabel een witte achtergrond */
     background-color: white;
+
+    /* Geeft de tabel een lichte schaduw */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Opmaak van de koppen en gewone cellen in de tabel */
 th, td {
+    /* Geeft ruimte rondom de tekst in de cellen */
     padding: 12px;
+
+    /* Zet de tekst aan de linkerkant */
     text-align: left;
+
+    /* Geeft de cellen een lichtgrijze rand */
     border: 1px solid #ddd;
+
+    /* Zorgt ervoor dat lange woorden op een nieuwe regel kunnen komen */
     overflow-wrap: break-word;
 }
 
+/* Opmaak van de koppen van de tabel */
 th {
+    /* Geeft de koppen een donkerblauwe achtergrond */
     background-color: #2c3e50;
+
+    /* Maakt de tekst in de koppen wit */
     color: white;
 }
 
+/* Geeft elke even rij in de tabel een andere achtergrondkleur */
 tr:nth-child(even) {
+    /* Geeft de even rijen een lichtgrijze achtergrond */
     background-color: #f8f9fa;
 }
 
+/* Verandert de achtergrondkleur van een rij als je er met de muis overheen gaat */
 tr:hover {
+    /* Geeft de rij een lichtblauwe achtergrond */
     background-color: #eaf2f8;
 }
 
+/* Algemene opmaak van links op de website */
 a {
+    /* Zorgt ervoor dat de link zich als een klein blok gedraagt */
     display: inline-block;
+
+    /* Haalt de onderstreping van de link weg */
     text-decoration: none;
+
+    /* Maakt de tekst wit */
     color: white;
+
+    /* Geeft de link een blauwe achtergrond */
     background-color: #3498db;
+
+    /* Geeft ruimte rondom de tekst */
     padding: 8px 12px;
+
+    /* Maakt de hoeken een beetje rond */
     border-radius: 4px;
 }
 
+/* Verandert de achtergrondkleur als je met de muis over een link gaat */
 a:hover {
+    /* Maakt de achtergrond iets donkerder blauw */
     background-color: #217dbb;
 }
 
+/* Geeft de link naar het toevoegen van een student een groene achtergrond */
 a[href*="toevoegen_student.php"] {
     background-color: #27ae60;
 }
 
+/* Geeft de link naar het verwijderen van een student een rode achtergrond */
 a[href*="verwijder_student.php"] {
     background-color: #e74c3c;
 }
 
+/* Past de website aan voor schermen van maximaal 768 pixels breed */
 @media screen and (max-width: 768px) {
     body {
+        /* Maakt de ruimte rondom de inhoud kleiner */
         padding: 10px;
     }
 
     table {
+        /* Maakt de tekst in de tabel kleiner */
         font-size: 12px;
     }
 
     th, td {
+        /* Maakt de ruimte in de tabelcellen kleiner */
         padding: 6px;
     }
 
     a {
+        /* Maakt de ruimte rondom links kleiner */
         padding: 6px 8px;
+        /* Maakt de tekst van links kleiner */
         font-size: 12px;
     }
 }
 
+/* Opmaak van het login formulier */
 .login-container {
+    /* Zorgt ervoor dat het login formulier niet breder wordt dan 400 pixels */
     max-width: 400px;
+    /* Zet het formulier in het midden en geeft ruimte boven en onder */
     margin: 50px auto;
+    /* Geeft ruimte binnen het formulier */
     padding: 30px;
+    /* Geeft het formulier een witte achtergrond */
     background-color: white;
+    /* Maakt de hoeken van het formulier rond */
     border-radius: 8px;
+    /* Geeft het formulier een lichte schaduw */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Gebruikt Arial als lettertype */
     font-family: Arial, sans-serif;
 }
 
+/* Opmaak van de titel in het login formulier */
 .login-container h1 {
+    /* Zet de titel in het midden */
     text-align: center;
+    /* Geeft de titel een donkerblauwe kleur */
     color: #2c3e50;
+    /* Geeft ruimte onder de titel */
     margin-bottom: 25px;
 }
 
+/* Opmaak van de labels bij de invoervelden */
 .login-container label {
+    /* Zet elk label op een eigen regel */
     display: block;
+    /* Geeft ruimte onder het label */
     margin-bottom: 8px;
+    /* Maakt de tekst dikgedrukt */
     font-weight: bold;
+    /* Geeft de tekst een donkergrijze kleur */
     color: #333;
 }
 
+/* Opmaak van de email- en wachtwoordvelden */
 .login-container input[type="email"],
 .login-container input[type="password"] {
+    /* Laat de invoervelden de volledige breedte gebruiken */
     width: 100%;
+    /* Geeft ruimte binnen de invoervelden */
     padding: 12px;
+    /* Geeft ruimte onder de invoervelden */
     margin-bottom: 20px;
+    /* Geeft de invoervelden een lichtgrijze rand */
     border: 1px solid #ccc;
+    /* Maakt de hoeken van de invoervelden rond */
     border-radius: 5px;
+    /* Zorgt ervoor dat padding en randen binnen de opgegeven breedte vallen */
     box-sizing: border-box;
+    /* Stelt de grootte van de tekst in */
     font-size: 14px;
 }
 
+/* Opmaak wanneer de gebruiker op een invoerveld klikt */
 .login-container input:focus {
+    /* Haalt de standaard buitenrand weg */
     outline: none;
+    /* Verandert de rand naar blauw */
     border-color: #3498db;
 }
 
+/* Opmaak van de inlogknop */
 .login-container input[type="submit"] {
+    /* Laat de knop de volledige breedte gebruiken */
     width: 100%;
+    /* Geeft ruimte rondom de tekst in de knop */
     padding: 12px;
+    /* Geeft de knop een blauwe achtergrond */
     background-color: #3498db;
+    /* Maakt de tekst wit */
     color: white;
+    /* Haalt de standaard rand weg */
     border: none;
+    /* Maakt de hoeken van de knop rond */
     border-radius: 5px;
+    /* Stelt de grootte van de tekst in */
     font-size: 16px;
+    /* Verandert de muisaanwijzer in een handje */
     cursor: pointer;
 }
 
+/* Verandert de kleur van de inlogknop als je er met de muis overheen gaat */
 .login-container input[type="submit"]:hover {
+    /* Maakt de achtergrond donkerder blauw */
     background-color: #217dbb;
 }
 
+/* Opmaak van het bericht op de loginpagina */
 .login-message {
+    /* Zorgt ervoor dat het bericht niet breder wordt dan 400 pixels */
     max-width: 400px;
+    /* Zet het bericht in het midden */
     margin: 20px auto;
+    /* Geeft ruimte rondom de tekst */
     padding: 12px;
+    /* Zet de tekst in het midden */
     text-align: center;
+    /* Geeft het bericht een lichtblauwe achtergrond */
     background-color: #eaf2f8;
+    /* Maakt de hoeken rond */
     border-radius: 5px;
+    /* Geeft de tekst een donkerblauwe kleur */
     color: #2c3e50;
 }
 
+/* Past het login formulier aan voor schermen van maximaal 500 pixels breed */
 @media screen and (max-width: 500px) {
     .login-container {
+        /* Maakt de ruimte rondom het formulier kleiner */
         margin: 25px 10px;
+        /* Maakt de ruimte binnen het formulier kleiner */
         padding: 20px;
     }
 }

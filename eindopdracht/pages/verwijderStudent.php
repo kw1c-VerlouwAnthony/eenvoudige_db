@@ -2,41 +2,58 @@
 //anthony verlouw
 //22/09/2206
 //verwijder pagina
-
 session_start();
 ?>
 
 <!doctype html>
 <html lang="en">
 <?php
-    include "../includes/header.php";
+// Hier wordt de header toegevoegd aan de pagina
+include "../includes/header.php";
 ?>
 <body>
 <?php
-$ID = $_GET["studentID"];
+    // Hier wordt het studentID opgehaald uit de URL
+    $ID = $_GET["studentID"];
 
-require "../includes/db_functions.php";
+    // Hier worden de database functies ingeladen
+    require "../includes/db_functions.php";
 
-StartConnection("studenten_informatie_db");
+    // Verbinding maken met de database
+    StartConnection("studenten_informatie_db");
 
-$queryDelete = "DELETE FROM `studenten_dataset_kw1c` WHERE studentID = '$ID'";
-$deleteResult = ExecuteQuery($queryDelete);
+    // Deze query verwijdert de student met het opgegeven studentID uit de database
+    $queryDelete = "DELETE FROM `studenten_dataset_kw1c` WHERE studentID = '$ID'";
 
-$rowsAffected = $deleteResult;
-if ($rowsAffected > 0)
-{
-    echo "De studenten informatie is verwijderd!";
-}
-else
-{
-    echo "De studenten informatie is niet verwijderd!";
-}
+    // Hier wordt de delete query uitgevoerd
+    $deleteResult = ExecuteQuery($queryDelete);
 
-if (!isset($ID))
-{
-    header("Location: ../index.php");
-    die();
-}
-?>
+    // Het resultaat van de delete query wordt opgeslagen in rowsAffected
+    // Dit geeft aan hoeveel rijen er zijn aangepast
+    $rowsAffected = $deleteResult;
+
+    // Controleren of er daadwerkelijk een student is verwijderd
+    if ($rowsAffected > 0)
+    {
+        // Als er een student is verwijderd wordt dit bericht getoond
+        echo "De studenten informatie is verwijderd!";
+    }
+    else
+    {
+        // Als er geen student is verwijderd wordt dit bericht getoond
+        echo "De studenten informatie is niet verwijderd!";
+    }
+
+    // Controleren of er een studentID aanwezig is
+    if (!isset($ID))
+    {
+        // Als er geen ID is wordt de gebruiker teruggestuurd naar de index pagina
+        header("Location: ../index.php");
+
+        // Hier wordt de rest van de code gestopt
+        die();
+    }
+    ?>
 </body>
 </html>
+
